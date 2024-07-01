@@ -96,6 +96,7 @@ dependencies {
         testImplementation ("androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version")
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("com.google.android.material:material:1.9.0")
 
 
 

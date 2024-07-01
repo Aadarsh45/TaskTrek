@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:cardCornerRadius="16dp"
+        app:cardCornerRadius="16dp"
         app:cardElevation="5dp"
         android:layout_margin="8dp"
         android:id="@+id/cvNotes">
@@ -39,6 +39,6 @@
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

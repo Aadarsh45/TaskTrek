@@ -1,5 +1,6 @@
 package com.example.todolist.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -28,6 +29,7 @@ class AddNote : AppCompatActivity() {
 
             if (noteTitle.isNotEmpty() && noteDesc.isNotEmpty()) {
                 viewModel.addNote(Note(0,noteTitle, noteDesc, randomColor))
+
 
                 finish()
             }
