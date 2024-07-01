@@ -1,21 +1,39 @@
 package com.example.todolist.ui
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import com.example.todolist.R
+import com.example.todolist.data.Note
+import com.example.todolist.databinding.ActivityAddNoteBinding
+import com.google.android.material.snackbar.Snackbar
 
 class AddNote : AppCompatActivity() {
+    private lateinit var binding: ActivityAddNoteBinding
+    lateinit var viewModel: NoteViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_add_note)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityAddNoteBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        viewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
+
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
+        binding.btnAdd.setOnClickListener {
+            val noteTitle = binding.etNoteTittle.text.toString()
+            val noteDesc = binding.etNoteDesc.text.toString()
+            val colorArray = resources.getIntArray(R.array.cardColors)
+            val randomColor = colorArray.random()
+
+            if (noteTitle.isNotEmpty() && noteDesc.isNotEmpty()) {
+                viewModel.addNote(Note(0,noteTitle, noteDesc, randomColor))
+
+                finish()
+            }
+            else{
+                Snackbar.make(binding.root, "Please enter some data", Snackbar.LENGTH_SHORT).show()
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ import com.example.todolist.data.Note
 
 
 @Dao
-class NoteDAO {
+interface NoteDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNote(note: Note)
 
