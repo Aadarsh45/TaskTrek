@@ -10,8 +10,6 @@ import com.example.todolist.database.NotesDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
-
 //creating of a viewmodel
 class NoteViewModel(application: Application): AndroidViewModel(application) {
     val allNotes: LiveData<List<Note>>

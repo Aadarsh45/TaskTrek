@@ -17,7 +17,7 @@
     <color name="teal">#26A69A</color>
 
     <integer-array name="cardColors">
-        <item>@color/blue</item>
+
         <item>@color/green</item>
         <item>@color/yellow</item>
         <item>@color/red</item>
@@ -25,7 +25,7 @@
         <item>@color/orange</item>
         <item>@color/pink</item>
         <item>@color/teal</item>
-        <item>@color/indigo</item>
+
         <item>@color/brown</item>
     </integer-array>
 </resources>
