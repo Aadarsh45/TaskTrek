@@ -11,7 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class AddNote : AppCompatActivity() {
     private lateinit var binding: ActivityAddNoteBinding
-    lateinit var viewModel: NoteViewModel
+    private lateinit var viewModel: NoteViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddNoteBinding.inflate(layoutInflater)
@@ -29,8 +29,6 @@ class AddNote : AppCompatActivity() {
 
             if (noteTitle.isNotEmpty() && noteDesc.isNotEmpty()) {
                 viewModel.addNote(Note(0,noteTitle, noteDesc, randomColor))
-
-
                 finish()
             }
             else{

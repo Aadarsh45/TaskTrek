@@ -30,7 +30,7 @@ class NoteRVAdapter(private val context: Context, private val listener: INoteRVA
     }
 
     inner class NoteViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val noteTitle: TextView = itemView.findViewById(R.id.etNoteTittle)
+        val noteTitle: TextView = itemView.findViewById(R.id.tvNoteTittle)
         val noteDes: TextView = itemView.findViewById(R.id.tvNoteDesc)
         val noteCard: CardView = itemView.findViewById(R.id.cvNotes)
         val llNote: LinearLayout = itemView.findViewById(R.id.llNote)
