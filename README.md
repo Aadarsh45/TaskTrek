@@ -22,7 +22,7 @@
 
 - Add tasks with descriptions
 - User-friendly interface
-- No data storage on our end
+- Secure
 - Edit tasks
 
 
